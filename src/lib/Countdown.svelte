@@ -20,7 +20,8 @@
 	let seconds = 0;
 	let timerRunning = false;
 	let timerText = "start";
-	$: titleString = `${minutes < 10 ? "0" + minutes : minutes}:${seconds < 10 ? "0" + seconds : seconds} - Pomodoro`;
+	let nameString = "Pomodoro";
+	$: titleString = `${minutes < 10 ? "0" + minutes : minutes}:${seconds < 10 ? "0" + seconds : seconds} - ${nameString}`;
 
 	function offset(percent: number) {
 		const progress = CIRCUMFERENCE * ((100 - percent) / 100);
@@ -34,18 +35,21 @@
 				time = $pomodoro;
 				minutes = time;
 				seconds = 0;
+				nameString = "Pomodoro";
 				break;
 			case "short_break":
 				progress = 0;
 				time = $shortBreak;
 				minutes = time;
 				seconds = 0;
+				nameString = "Short Break";
 				break;
 			case "long_break":
 				progress = 0;
 				time = $longBreak;
 				minutes = time;
 				seconds = 0;
+				nameString = "Long Break";
 				break;
 		}
 	}
