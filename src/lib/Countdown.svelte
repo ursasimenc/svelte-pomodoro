@@ -83,7 +83,7 @@
 				timerRunning = false;
 				timerText = "start";
 			}
-		}, 10);
+		}, 1000);
 	}
 </script>
 
