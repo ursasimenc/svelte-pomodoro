@@ -100,15 +100,15 @@
 <section>
 	<div class="switch {$accent}">
 		<div class="font">
-			<input type="radio" id="pomodoro" name="timer" value="pomodoro" checked on:change="{() => setTime('pomodoro')}" />
+			<input type="radio" id="pomodoro_radio" name="timer" value="pomodoro" checked on:change="{() => setTime('pomodoro')}" />
 			<label for="pomodoro" class="pomodoro">pomodoro</label>
 		</div>
 		<div class="font">
-			<input type="radio" id="short_break" name="timer" value="short_break" on:change="{() => setTime('short_break')}" />
+			<input type="radio" id="short_break_radio" name="timer" value="short_break" on:change="{() => setTime('short_break')}" />
 			<label for="short_break" class="short_break">short break</label>
 		</div>
 		<div class="font">
-			<input type="radio" id="long_break" name="timer" value="long_break" on:change="{() => setTime('long_break')}" />
+			<input type="radio" id="long_break_radio" name="timer" value="long_break" on:change="{() => setTime('long_break')}" />
 			<label for="long_break" class="long_break">long break</label>
 		</div>
 	</div>
@@ -133,9 +133,9 @@
 				</svg>
 			{/if}
 			<div class="text">
-				<div class="time">
+				<h1 class="time">
 					{#if minutes < 10}0{/if}{minutes}:{#if seconds < 10}0{/if}{seconds}
-				</div>
+				</h1>
 				<button class="pause {$font}" on:click="{startTimer}">{timerText}</button>
 			</div>
 		</div>

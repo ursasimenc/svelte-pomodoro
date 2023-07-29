@@ -118,8 +118,8 @@
 	</div>
 </dialog>
 
-<button on:click="{toggle}"
-	><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+<button on:click="{toggle}">
+	<span>Open settings</span><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
 		><path
 			class="{$accent}"
 			fill="#D7E0FF"
@@ -135,6 +135,11 @@
 		background-color: transparent;
 		border: none;
 		cursor: pointer;
+
+		span {
+			visibility: hidden;
+			position: absolute;
+		}
 
 		path {
 			@include transition(all);
