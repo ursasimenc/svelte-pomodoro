@@ -137,7 +137,7 @@
 		cursor: pointer;
 
 		span {
-			visibility: hidden;
+			opacity: 0;
 			position: absolute;
 		}
 
