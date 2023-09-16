@@ -100,16 +100,13 @@
 <section>
 	<div class="switch {$accent}">
 		<div class="font">
-			<input type="radio" id="pomodoro_radio" name="timer" value="pomodoro" checked on:change="{() => setTime('pomodoro')}" />
-			<label for="pomodoro" class="pomodoro">pomodoro</label>
+			<label for="pomodoro" class="pomodoro"><input type="radio" id="pomodoro_radio" name="timer" value="pomodoro" checked on:change="{() => setTime('pomodoro')}" />pomodoro</label>
 		</div>
 		<div class="font">
-			<input type="radio" id="short_break_radio" name="timer" value="short_break" on:change="{() => setTime('short_break')}" />
-			<label for="short_break" class="short_break">short break</label>
+			<label for="short_break" class="short_break"><input type="radio" id="short_break_radio" name="timer" value="short_break" on:change="{() => setTime('short_break')}" />short break</label>
 		</div>
 		<div class="font">
-			<input type="radio" id="long_break_radio" name="timer" value="long_break" on:change="{() => setTime('long_break')}" />
-			<label for="long_break" class="long_break">long break</label>
+			<label for="long_break" class="long_break"><input type="radio" id="long_break_radio" name="timer" value="long_break" on:change="{() => setTime('long_break')}" />long break</label>
 		</div>
 	</div>
 	<div class="timer">
@@ -174,25 +171,30 @@
 		}
 
 		input[type="radio"] {
-			display: none;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			position: absolute;
+			cursor: pointer;
+			@include size(50px, 50px);
 		}
 
 		&.Aqua {
-			input[type="radio"]:checked + label {
+			label:has(input[type="radio"]:checked) {
 				background-color: $accentAqua;
 				color: $white;
 			}
 		}
 
 		&.Purple {
-			input[type="radio"]:checked + label {
+			label:has(input[type="radio"]:checked) {
 				background-color: $accentPurple;
 				color: $white;
 			}
 		}
 
 		&.Red {
-			input[type="radio"]:checked + label {
+			label:has(input[type="radio"]:checked) {
 				background-color: $accentRed;
 				color: $white;
 			}
